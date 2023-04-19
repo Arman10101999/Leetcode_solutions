@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} gifts
+ * @param {number} k
+ * @return {number}
+ */
+var pickGifts = function(gifts, k) {
+    
+  gifts.sort((a, b) => a - b);
+  for (let i = gifts.length - 1, j = 1; j <= k; j++) {
+    if (gifts[i] === 1) {
+      break;
+    }
+    let p = Math.floor(Math.sqrt(gifts[i]));
+    gifts[i] = p;
+    gifts.sort((a, b) => a - b);
+  }
+  let s = 0;
+  for (let i of gifts) {
+    s += i;
+  }
+  return s;
+}

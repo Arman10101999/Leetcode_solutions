@@ -1,0 +1,29 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var splitNum = function(num) {
+ 
+        let arr = [];
+
+        while (num > 0) {
+            let rem = num % 10;
+            arr.push(rem);
+            num = Math.floor(num / 10);
+        }
+        arr.sort();
+        let num1 = '';
+        let num2 = '';
+        let i = 0;
+        while (i < arr.length) {
+            num1 += arr[i].toString();
+            i += 1;
+            if (i < arr.length) {
+                num2 += arr[i].toString();
+                i += 1;
+            }
+        }
+        return parseInt(num1) + parseInt(num2);
+    }
+
+  

@@ -1,0 +1,26 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var leftRigthDifference = function(nums) {
+  
+  const n = nums.length;
+  const leftSum = new Array(n).fill(0);
+  const rightSum = new Array(n).fill(0);
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    leftSum[i] = sum;
+    sum += nums[i];
+  }
+  sum = 0;
+  for (let i = n - 1; i >= 0; i--) {
+    rightSum[i] = sum;
+    sum += nums[i];
+  }
+  const answer = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    answer[i] = Math.abs(leftSum[i] - rightSum[i]);
+  }
+  return answer;
+}
+

@@ -1,0 +1,40 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var minMaxDifference = function(num) {
+        
+    const n = num.toString();
+    let s = n;
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] !== '9') {
+        const x = s[i];
+        for (let j = i; j < s.length; j++) {
+          if (s[j] === x) {
+            s = s.slice(0, j) + '9' + s.slice(j + 1);
+          }
+        }
+        break;
+      }
+    }
+    const h = parseInt(s);
+    s = n;
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] !== '0') {
+        const x = s[i];
+        for (let j = i; j < s.length; j++) {
+          if (s[j] === x) {
+            s = s.slice(0, j) + '0' + s.slice(j + 1);
+          }
+        }
+        break;
+      }
+    }
+    const l = parseInt(s);
+    return h - l;
+  }
+
+
+
+
+

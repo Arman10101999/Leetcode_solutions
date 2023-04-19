@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var differenceOfSum = function(nums) {
+
+  const sum = nums.reduce((acc, curr) => acc + curr, 0);
+  let digits = 0;
+  
+  for (let a of nums) {
+    while (a > 0) {
+      digits += a % 10;
+      a = Math.floor(a / 10);
+    }
+  }
+  
+  return Math.abs(sum - digits);
+}
+
+
+

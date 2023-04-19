@@ -1,0 +1,23 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var alternateDigitSum = function(n) {
+    let sum = 0 ;
+    let sum_o = 0;
+    const d = n.toString().split("").map(Number);
+    
+    for ( let i = 0 ; i< d.length ; i++)
+{
+    if (i%2 === 0 )
+    {
+        sum = sum + d[i]
+        
+    }
+    else
+    {
+        sum = sum - d[i]
+    }
+}
+    return sum
+};

@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var minNumber = function(nums1, nums2) {
+   
+    let n = 10;
+    for (let i of nums1) {
+        if (nums2.includes(i)) {
+            n = Math.min(n, i);
+        }
+    }
+    if (n !== 10) {
+        return n;
+    }
+    let x = Math.min(...nums1);
+    let y = Math.min(...nums2);
+    let a = x * 10 + y;
+    let b = y * 10 + x;
+    return Math.min(a, b);
+}
+

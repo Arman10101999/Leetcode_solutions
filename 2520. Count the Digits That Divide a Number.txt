@@ -1,0 +1,17 @@
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var countDigits = function(num) {
+    let count = 0;
+    let num_arr = num.toString().split("").map(Number);
+    //console.log(num_arr);
+    for ( let i = 0 ; i<num_arr.length ; i++)
+    {
+        if(num % num_arr[i] === 0 )
+        {
+            count++
+        }
+    }
+    return count
+};

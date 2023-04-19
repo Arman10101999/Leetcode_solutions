@@ -1,0 +1,27 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maximumCount = function(nums) {
+    let pos_num = 0;
+    let neg_num = 0 ;
+    let count_zero = 0;
+    
+    for( let i = 0 ; i < nums.length ; i++)
+    {
+        if( nums[i] > 0 )
+        {
+            pos_num++
+        }
+        else if ( nums[i] === 0)
+        {
+            count_zero++
+        }
+        else
+        {
+            neg_num++
+        }
+    
+    }
+    return Math.max(pos_num , neg_num)
+};

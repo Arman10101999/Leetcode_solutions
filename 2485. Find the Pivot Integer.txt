@@ -1,0 +1,22 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var pivotInteger = function(n)
+{
+    //let start = 1 ; 
+    //let end = n ;
+    let total_sum = (n*(n+1)/2)
+    let left_sum = 0 ;
+
+    for ( let i = 0 ; i <= n ; i++)
+    {
+        let right_sum = total_sum - left_sum  - i
+        if( right_sum === left_sum )
+        {
+            return i 
+        }
+        left_sum += i
+    }
+    return -1
+};

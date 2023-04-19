@@ -1,0 +1,11 @@
+var isAnagram = function(s, t) {
+    
+  if (s.length !== t.length) {
+    return false; // If the strings have different lengths, they cannot be anagrams
+  }
+  
+  const sortedS = s.split("").sort().join(""); // Sort the characters of the first string
+  const sortedT = t.split("").sort().join(""); // Sort the characters of the second string
+  
+  return sortedS === sortedT; // If the sorted strings are equal, the strings are anagrams
+}

@@ -1,0 +1,39 @@
+/**
+ * @param {number[][]} nums
+ * @return {number}
+ */
+var diagonalPrime = function(nums) {
+    
+  const n = nums.length;
+  let maxPrime = 0;
+  
+  // Check main diagonal
+  for (let i = 0; i < n; i++) {
+    if (isPrime(nums[i][i])) {
+      maxPrime = Math.max(maxPrime, nums[i][i]);
+    }
+  }
+  
+  // Check secondary diagonal
+  for (let i = 0; i < n; i++) {
+    if (isPrime(nums[i][n - i - 1])) {
+      maxPrime = Math.max(maxPrime, nums[i][n - i - 1]);
+    }
+  }
+  
+  return maxPrime;
+}
+
+function isPrime(num) {
+  if (num <= 1) return false;
+  if (num === 2) return true;
+  if (num % 2 === 0) return false;
+  
+  const limit = Math.ceil(Math.sqrt(num));
+  for (let i = 3; i <= limit; i += 2) {
+    if (num % i === 0) return false;
+  }
+  
+  return true;
+}
+

@@ -1,0 +1,27 @@
+function circularArrayDistance(words, target, startIndex) {
+  const n = words.length;
+  let minDist = Infinity;
+  let i = startIndex;
+  let dist = 0;
+
+  do {
+    if (words[i] === target) {
+      minDist = Math.min(minDist, dist);
+    }
+    i = (i + 1) % n;
+    dist++;
+  } while (i !== startIndex);
+
+  i = startIndex;
+  dist = 0;
+
+  do {
+    if (words[i] === target) {
+      minDist = Math.min(minDist, dist);
+    }
+    i = (i - 1 + n) % n;
+    dist++;
+  } while (i !== startIndex);
+
+  return minDist !== Infinity ? minDist : -1;
+}

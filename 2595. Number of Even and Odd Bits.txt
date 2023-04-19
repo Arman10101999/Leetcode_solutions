@@ -1,0 +1,22 @@
+/**
+ * @param {number} n
+ * @return {number[]}
+ */
+var evenOddBit = function(n) {
+    
+  let x = (n >>> 0).toString(2).split("").reverse().join("");
+  let even = 0;
+  let odd = 0;
+  
+  for (let i = 0; i < x.length; i++) {
+    if (i % 2 == 0) {
+      if (x[i] == "1") even++;
+    }
+    else {
+      if (x[i] == "1") odd++;
+    }
+  }
+  
+  return [even, odd];
+}
+

@@ -1,0 +1,30 @@
+/**
+ * @param {number} numOnes
+ * @param {number} numZeros
+ * @param {number} numNegOnes
+ * @param {number} k
+ * @return {number}
+ */
+var kItemsWithMaximumSum = function(numOnes, numZeros, numNegOnes, k) {
+    let sum = k;
+    if (k < numOnes )
+    {
+        sum = 1*k;
+    }
+    if ( k > numOnes && k <= (numOnes + numZeros))
+    {
+        sum = (1*numOnes) + 0*((numOnes+ numZeros) - k)
+    }
+    if ( k > numOnes && k >= (numOnes + numZeros) && k <= (numOnes +  numZeros + numNegOnes))
+    {
+        sum = (1*numOnes) + 0*(numZeros) - 1*(k- (numOnes + numZeros))
+    }
+    if ( k >= (numOnes + numZeros + numNegOnes))
+    {
+        sum = (1*numOnes) + 0*(numZeros) + (-1)*(numNegOnes)
+    }
+    
+
+    return sum;
+
+};

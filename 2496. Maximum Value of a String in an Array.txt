@@ -1,0 +1,16 @@
+/**
+ * @param {string[]} strs
+ * @return {number}
+ */
+var maximumValue = function(strs) 
+{
+      let ans = 0
+    for(let i of strs){
+        if(isNaN(i)){
+            ans = Math.max(i.length,ans)
+        } else{
+            ans = Math.max(Number(i),ans)
+        }
+    }
+    return ans
+};
